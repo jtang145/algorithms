@@ -10,6 +10,16 @@ public class QuickSort_Start {
         int base = arr[low];
         int i = low;
         int j = high;
+        while (i < j){
+            while (arr[j] >= base && i < j){
+                j --;
+            }
 
+            while (arr[i] <= base && i <j ){
+                i ++;
+            }
+
+
+        }
     }
 }
