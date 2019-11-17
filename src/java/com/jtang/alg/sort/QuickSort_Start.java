@@ -1,6 +1,6 @@
 package com.jtang.alg.sort;
 
-public class QuickSort_Start {
+public class QuickSort_Start extends SwapAction {
 
 
     public static void quickSort(int[] arr, int low, int high){
@@ -18,7 +18,9 @@ public class QuickSort_Start {
             while (arr[i] <= base && i <j ){
                 i ++;
             }
-
+            if(i < j){
+                swap(arr, i, j);
+            }
 
         }
     }
