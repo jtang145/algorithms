@@ -12,5 +12,8 @@ public class SwapAction {
         arr[a] = arr[a]+arr[b];
         arr[b] = arr[a]-arr[b];
         arr[a] = arr[a]-arr[b];
+//        int temp = arr[a];
+//        arr[a] = arr[b];
+//        arr[b] = temp;
     }
 }
