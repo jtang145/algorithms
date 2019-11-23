@@ -2,7 +2,7 @@ package com.jtang.alg.sort;
 
 import java.util.Arrays;
 
-public class InsertionSort extends SwapAction {
+public class SimpleInsertionSort extends SwapAction {
     public static void main(String[] args) {
         int[] arr = {9, 8, 7, 6, 5, 4, 3, 2, 1};
         insertionSort(arr);
@@ -10,7 +10,7 @@ public class InsertionSort extends SwapAction {
     }
 
     /**
-     * 插入排序
+     * 插入排序:
      *
      * @param arr
      */
