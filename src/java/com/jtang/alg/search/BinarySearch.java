@@ -2,8 +2,9 @@ package com.jtang.alg.search;
 
 public class BinarySearch {
     public static void main(String[] args) {
-        int[] data = {1, 5, 6, 12, 15, 19, 23, 26, 30, 33, 37, 42, 53, 60};
-        int target = 19;
+//        int[] data = {4, 5, 6, 12, 15, 19, 23, 26, 30, 33, 37, 42, 53, 60};
+        int[] data = {1, 2, 3, 4, 5, 6, 7, 8, 9, 15, 20, 25};
+        int target = 2;
         int index = binarySearch2(data, 0, data.length - 1, target);
         if (index > -1) {
             System.out.println("found ：" + index);
@@ -23,6 +24,7 @@ public class BinarySearch {
     private static int binarySearch1(int[] data, int from, int to, int target) {
         if (from <= to) {
             int mid = from + (to - from) / 2;//中间位置，为了防止溢出使用这种方式求中间位置
+            System.out.println(String.format("Checking mid index %s", mid));
             if (data[mid] < target) {//中间的值比目标值小，则在左半边继续查找
                 return binarySearch1(data, mid + 1, to, target);
             }else if(data[mid] > target){//中间的值比目标值大，则在右半边继续查找
@@ -45,6 +47,7 @@ public class BinarySearch {
     private static int binarySearch2(int[] data, int from, int to, int target) {
         while(from <= to) {
             int mid = from + (to - from) / 2;
+            System.out.println(String.format("Checking mid index %s", mid));
             if (data[mid] < target) {
                 from = mid + 1;
             }else if(data[mid] > target) {

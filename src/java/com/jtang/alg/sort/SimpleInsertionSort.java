@@ -10,7 +10,8 @@ public class SimpleInsertionSort extends SwapAction {
     }
 
     /**
-     * 插入排序:
+     * 插入排序: 将数组逐渐变成2个部分，将无序部分，比较后插入到有序数组中去，最后变成一个有序数组。
+     *         本实现每次取已排序部分的下一个元素排序、插入。
      *
      * @param arr
      */
