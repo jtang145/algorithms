@@ -18,6 +18,9 @@ public class SimpleInsertionSort extends SwapAction {
     public static void insertionSort(int[] arr) {
         for (int i = 1; i < arr.length; i++) {
             int j = i;
+            /**
+            遍历有序区域，从前向后排序，每次往后增加一个，"插入"到已排的部分
+             */
             while (j > 0 && arr[j] < arr[j - 1]) {
                 swap(arr,j,j-1);
                 j--;

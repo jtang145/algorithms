@@ -1,2 +1,5 @@
-# algorithm
+# Algorithm
 
+## 排序算法
+
+* 冒泡排序、插入排序、选择排序
