@@ -28,11 +28,17 @@ public class QuickSort {
             while (low < high && arr[high] >= pivot) {
                 --high;
             }
-            arr[low] = arr[high];             //交换比枢轴小的记录到左端
+            /**
+             * 达到比pivot小的值, 交换比枢轴小的记录到左端
+             */
+            arr[low] = arr[high];
             while (low < high && arr[low] <= pivot) {
                 ++low;
             }
-            arr[high] = arr[low];           //交换比枢轴小的记录到右端
+            /**
+             * 交换比枢轴大的记录到右端
+             */
+            arr[high] = arr[low];
         }
         //扫描完成，枢轴到位
         arr[low] = pivot;
