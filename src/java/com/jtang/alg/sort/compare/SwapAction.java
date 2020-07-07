@@ -1,4 +1,4 @@
-package com.jtang.alg.sort;
+package com.jtang.alg.sort.compare;
 
 public class SwapAction {
 
