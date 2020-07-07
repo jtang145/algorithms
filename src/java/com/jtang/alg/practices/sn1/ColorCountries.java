@@ -3,7 +3,7 @@ package com.jtang.alg.practices.sn1;
 public class ColorCountries {
     /**
      * Problem description: count the countries in a matrix,
-     * matrix example: {@link /resources/sn1.png}
+     * matrix example: <a href="file: /resources/sn1.png">sn1.png</a>
      *
      * @param args
      */
