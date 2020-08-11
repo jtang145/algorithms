@@ -1,12 +1,11 @@
 package com.jtang.alg.practices.sn1;
 
+/**
+ * Problem description: count the countries in a matrix,
+ * matrix example: <a href="file: /resources/sn1.png">sn1.png</a>
+ *
+ */
 public class ColorCountries {
-    /**
-     * Problem description: count the countries in a matrix,
-     * matrix example: <a href="file: /resources/sn1.png">sn1.png</a>
-     *
-     * @param args
-     */
     public static void main(String[] args) {
         int[][] sourceMatrix = {{5, 4, 4}, {4, 3, 4}, {3, 2, 4}, {2, 2, 2}, {3, 3, 4}, {1, 4, 4}, {4, 1, 1}};
         System.out.println(sourceMatrix.length);
