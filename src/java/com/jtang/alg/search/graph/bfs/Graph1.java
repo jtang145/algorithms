@@ -23,6 +23,17 @@ public class Graph1 {
         adj[t].add(s);
     }
 
+    public void printGraph() {
+        System.out.println("Current Graph:");
+        for (int i = 0; i < adj.length; i++) {
+            System.out.println("Node: " + i);
+            for(int j=0; j < adj[i].size(); j++){
+                System.out.print(adj[i].get(j) + ", ");
+            }
+            System.out.println("");
+        }
+    }
+
 
     public void bfs(int startNode, int toNode) {
         if (startNode == toNode) {
@@ -39,12 +50,12 @@ public class Graph1 {
 
         while (queue.size() != 0) {
             int to_visit = queue.poll();
-            //process a link list, all 
-            for (int i =0; i<adj[to_visit].size(); i++){
+            //process a link list, all of them, that is breadth-first
+            for (int i = 0; i < adj[to_visit].size(); i++) {
                 int q = adj[to_visit].get(i);
-                if(!visited[q]){
+                if (!visited[q]) {
                     prev[q] = to_visit;
-                    if(q == toNode){
+                    if (q == toNode) {
                         printResult(prev, startNode, toNode);
                         return;
                     }
@@ -56,7 +67,7 @@ public class Graph1 {
     }
 
     private void printResult(int[] prev, int startNode, int toNode) {
-        if(prev[toNode] != -1 && startNode != toNode){
+        if (prev[toNode] != -1 && startNode != toNode) {
             printResult(prev, startNode, prev[toNode]);
         }
         System.out.println(toNode + " ");

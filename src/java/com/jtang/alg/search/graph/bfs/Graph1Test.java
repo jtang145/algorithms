@@ -14,6 +14,7 @@ public class Graph1Test {
         graph1.addEdge(6,7);
         graph1.addEdge(5,7);
 
+        graph1.printGraph();
         graph1.bfs(3,7);
     }
 }
