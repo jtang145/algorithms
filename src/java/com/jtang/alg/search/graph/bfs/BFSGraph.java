@@ -1,39 +1,21 @@
 package com.jtang.alg.search.graph.bfs;
 
+import com.jtang.alg.search.graph.BaseGraph;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * 无向图,邻接表实现
+ * 无向图,邻接表实现，实现特点：
+ * 结果与链接表的初始存储顺序有关，
+ *
  */
-public class Graph1 {
-    private int vertex;
-    private LinkedList<Integer> adj[];
+public class BFSGraph extends BaseGraph {
 
-    public Graph1(int vertex) {
-        this.vertex = vertex;
-        adj = new LinkedList[vertex];
-        for (int i = 0; i < vertex; i++) {
-            adj[i] = new LinkedList<>();
-        }
+
+    public BFSGraph(int vertex) {
+        super(vertex);
     }
-
-    public void addEdge(int s, int t) {
-        adj[s].add(t);
-        adj[t].add(s);
-    }
-
-    public void printGraph() {
-        System.out.println("Current Graph:");
-        for (int i = 0; i < adj.length; i++) {
-            System.out.println("Node: " + i);
-            for(int j=0; j < adj[i].size(); j++){
-                System.out.print(adj[i].get(j) + ", ");
-            }
-            System.out.println("");
-        }
-    }
-
 
     public void bfs(int startNode, int toNode) {
         if (startNode == toNode) {
@@ -66,10 +48,4 @@ public class Graph1 {
         }
     }
 
-    private void printResult(int[] prev, int startNode, int toNode) {
-        if (prev[toNode] != -1 && startNode != toNode) {
-            printResult(prev, startNode, prev[toNode]);
-        }
-        System.out.println(toNode + " ");
-    }
 }
