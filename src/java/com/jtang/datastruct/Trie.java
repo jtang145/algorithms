@@ -1,5 +1,8 @@
 package com.jtang.datastruct;
 
+/**
+ * 可用于前缀匹配字符串，多模式匹配
+ */
 public class Trie {
     private TrieNode root = new TrieNode('/');
 

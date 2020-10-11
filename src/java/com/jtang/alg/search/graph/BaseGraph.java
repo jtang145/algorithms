@@ -2,6 +2,9 @@ package com.jtang.alg.search.graph;
 
 import java.util.LinkedList;
 
+/**
+ * 图的邻接表实现
+ */
 public class BaseGraph {
     protected int vertex;
     protected LinkedList<Integer> adj[];

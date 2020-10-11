@@ -1,7 +1,7 @@
 package com.jtang.alg.practices.sn1;
 
 /**
- * Problem description: count the countries in a matrix,
+ * Problem description: count the countries in a matrix, each number represents an color.
  * matrix example: <a href="file: /resources/sn1.png">sn1.png</a>
  *
  */

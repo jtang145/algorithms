@@ -5,6 +5,7 @@ import java.util.LinkedList;
 public class JosephusRing {
     private int capacity;
     private LinkedList<Integer> content;
+    //TODO:
 
     public JosephusRing(int capacity) {
         this.capacity = capacity;
