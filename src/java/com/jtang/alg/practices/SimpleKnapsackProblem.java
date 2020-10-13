@@ -1,5 +1,20 @@
 package com.jtang.alg.practices;
 
+
+/**
+ * 简单回溯算法实现0-1背包问题，分析过程可以借助决策树进行：
+ *                                      f(0,0)
+ *                          --------0------|-------1--------
+ *                         |                               |
+ *                     f(1,0)                           f(1,2)
+ *            -----0------|---1----             -----0-----|---1---
+ *            |                   |             |                 |
+ *          f(2,0)             f(2,2)         f(2,2)           f(2,4)
+ *      ---0--|--1-        ---0--|--1-       --0--|--1-       --0--|--1---
+ *      |         |        |        |       |        |       |          |
+ *  f(3, 0)   f(3,4)    f(3,2)  f(3,6)   f(3,2)   f(3,6)   f(3,4)     f(3,8)
+ *
+ */
 public class SimpleKnapsackProblem {
 
     private int maxWeight = Integer.MIN_VALUE; //存储背包中物品总重量的最大
@@ -19,37 +34,39 @@ public class SimpleKnapsackProblem {
     }
 
     public void packageAll(int[] items) {
-        doPack(0, items[0], items);
+        doPack(0, 0, items);
     }
 
     public void showMax() {
+        System.out.println("");
         System.out.println("My max weight: " + this.maxWeight);
     }
 
     /**
-     * @param item          current object item
+     * @param itemIndex     current object itemIndex
      * @param currentWeight current total weight
-     * @param items         weight of each item
+     * @param items         weight of each itemIndex
      */
-    private void doPack(int item, int currentWeight, int[] items) {
-        System.out.println("Process item: " + item);
-        if (currentWeight == capacity || item == count) { // currentWeight==w表示装满了;item==n表示已经考察完所有的物品
+    private void doPack(int itemIndex, int currentWeight, int[] items) {
+        System.out.println("Process itemIndex: " + itemIndex);
+        if (currentWeight == capacity || itemIndex == (count - 1)) {
+            // currentWeight==w表示装满了;itemIndex==n表示已经考察完所有的物品
             if (currentWeight > maxWeight) {
                 maxWeight = currentWeight;
             }
-            System.out.println("return with item: " + item);
+            System.out.println("complete one group, max value: " + maxWeight + ", current value: " + currentWeight);
             return;
         }
-        doPack(item + 1, currentWeight, items);
-        if (currentWeight + items[item] <= capacity) {// 已经超过可以背包承受的重量的时候，就不要再装了
-            System.out.println("add item index: " + item + ", current weight: " + currentWeight + ", adding weight: " + items[item]);
-            doPack(item + 1, currentWeight + items[item], items);
+        doPack(itemIndex + 1, currentWeight, items);
+        if (currentWeight + items[itemIndex] <= capacity) {// 已经超过可以背包承受的重量的时候，就不要再装了
+//            System.out.println("add item index: " + itemIndex + ", current weight: " + currentWeight + ", adding weight: " + items[itemIndex]);
+            doPack(itemIndex + 1, currentWeight + items[itemIndex], items);
         }
     }
 
     public static void main(String[] args) {
-        int[] weights = {3, 20, 3, 20, 15, 16, 17, 8, 9, 10};
-        SimpleKnapsackProblem test = new SimpleKnapsackProblem(100, weights.length);
+        int[] weights = {2, 2, 4, 6, 3, 8, 9, 10};
+        SimpleKnapsackProblem test = new SimpleKnapsackProblem(9, 4);
         test.packageAll(weights);
 
         test.showMax();
