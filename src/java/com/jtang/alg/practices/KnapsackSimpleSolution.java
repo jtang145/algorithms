@@ -15,7 +15,7 @@ package com.jtang.alg.practices;
  *  f(3, 0)   f(3,4)    f(3,2)  f(3,6)   f(3,2)   f(3,6)   f(3,4)     f(3,8)
  *
  */
-public class SimpleKnapsackProblem {
+public class KnapsackSimpleSolution {
 
     private int maxWeight = Integer.MIN_VALUE; //存储背包中物品总重量的最大
 
@@ -28,18 +28,23 @@ public class SimpleKnapsackProblem {
     // 假设背包可承受重量100，物品个数10，物品重量存储在数组a中，那可以这样调用函数：
     // f(0, 0, a, 10)
 
-    public SimpleKnapsackProblem(int capacity, int count) {
+    //Optional: 避免重复运算，缓存相同组合的结果
+    private boolean [][] cache;
+
+    public KnapsackSimpleSolution(int capacity, int count) {
         this.capacity = capacity;
         this.count = count;
+        this.cache = new boolean[count][capacity + 1];
     }
 
     public void packageAll(int[] items) {
         doPack(0, 0, items);
     }
 
-    public void showMax() {
+    public int showMax() {
         System.out.println("");
         System.out.println("My max weight: " + this.maxWeight);
+        return this.maxWeight;
     }
 
     /**
@@ -57,6 +62,8 @@ public class SimpleKnapsackProblem {
             System.out.println("complete one group, max value: " + maxWeight + ", current value: " + currentWeight);
             return;
         }
+        if(cache[itemIndex][currentWeight]) return;
+        cache[itemIndex][currentWeight] = true;
         doPack(itemIndex + 1, currentWeight, items);
         if (currentWeight + items[itemIndex] <= capacity) {// 已经超过可以背包承受的重量的时候，就不要再装了
 //            System.out.println("add item index: " + itemIndex + ", current weight: " + currentWeight + ", adding weight: " + items[itemIndex]);
@@ -66,9 +73,9 @@ public class SimpleKnapsackProblem {
 
     public static void main(String[] args) {
         int[] weights = {2, 2, 4, 6, 3, 8, 9, 10};
-        SimpleKnapsackProblem test = new SimpleKnapsackProblem(9, 4);
+        KnapsackSimpleSolution test = new KnapsackSimpleSolution(9, 4);
         test.packageAll(weights);
 
-        test.showMax();
+        int max = test.showMax();
     }
 }
