@@ -1,5 +1,8 @@
 package com.jtang.alg.practices;
 
+/**
+ * backtracking algorithm for 8-queens problem.
+ */
 public class EightQueens {
     private int[] result = new int[8];//全局或成员变量,下标表示行,值表示queen存储在哪一列
 

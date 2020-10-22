@@ -1,5 +1,8 @@
 package com.jtang.alg.practices;
 
+/**
+ * Simple 0-1 knapsack problem, dynamic programming.
+ */
 public class Knapsack {
 
     //    weights:物品重量，count:物品个数，weightCapacity:背包可承载重量

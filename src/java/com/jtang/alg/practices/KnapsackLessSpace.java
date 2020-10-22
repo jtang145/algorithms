@@ -1,5 +1,8 @@
 package com.jtang.alg.practices;
 
+/**
+ * Space enhancement to {@link KnapsackSimpleSolution}
+ */
 public class KnapsackLessSpace {
 
 
