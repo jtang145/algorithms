@@ -3,16 +3,16 @@ package com.jtang.alg.practices;
 
 /**
  * 简单回溯算法实现0-1背包问题，分析过程可以借助决策树进行：
- *                                      f(0,0)
+ *                                      dopack(0,0)
  *                          --------0------|-------1--------
  *                         |                               |
- *                     f(1,0)                           f(1,2)
+ *                     dopack(1,0)                           dopack(1,2)
  *            -----0------|---1----             -----0-----|---1---
  *            |                   |             |                 |
- *          f(2,0)             f(2,2)         f(2,2)           f(2,4)
+ *          dopack(2,0)             dopack(2,2)         dopack(2,2)           dopack(2,4)
  *      ---0--|--1-        ---0--|--1-       --0--|--1-       --0--|--1---
  *      |         |        |        |       |        |       |          |
- *  f(3, 0)   f(3,4)    f(3,2)  f(3,6)   f(3,2)   f(3,6)   f(3,4)     f(3,8)
+ *  dopack(3, 0)   dopack(3,4)    dopack(3,2)  dopack(3,6)   dopack(3,2)   dopack(3,6)   dopack(3,4)     dopack(3,8)
  *
  */
 public class KnapsackSimpleSolution {
@@ -26,7 +26,7 @@ public class KnapsackSimpleSolution {
     // w背包重量；items表示每个物品的重量；
     // n表示物品个数
     // 假设背包可承受重量100，物品个数10，物品重量存储在数组a中，那可以这样调用函数：
-    // f(0, 0, a, 10)
+    // dopack(0, 0, a, 10)
 
     //Optional: 避免重复运算，缓存相同组合的结果
     private boolean [][] cache;
