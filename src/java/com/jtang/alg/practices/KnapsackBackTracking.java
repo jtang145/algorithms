@@ -16,7 +16,7 @@ package com.jtang.alg.practices;
  *  f(3, 0)   f(3,4)    f(3,2)  f(3,6)   f(3,2)   f(3,6)   f(3,4)     f(3,8)
  *
  */
-public class KnapsackSimpleSolution {
+public class KnapsackBackTracking {
 
     private int maxWeight = Integer.MIN_VALUE; //存储背包中物品总重量的最大
 
@@ -32,7 +32,7 @@ public class KnapsackSimpleSolution {
     //Optional: 避免重复运算，缓存相同组合的结果
     private boolean [][] cache;
 
-    public KnapsackSimpleSolution(int capacity, int count) {
+    public KnapsackBackTracking(int capacity, int count) {
         this.capacity = capacity;
         this.count = count;
         this.cache = new boolean[count][capacity + 1];
@@ -74,7 +74,7 @@ public class KnapsackSimpleSolution {
 
     public static void main(String[] args) {
         int[] weights = {2, 2, 4, 6, 3, 8, 9, 10};
-        KnapsackSimpleSolution test = new KnapsackSimpleSolution(9, 4);
+        KnapsackBackTracking test = new KnapsackBackTracking(9, 4);
         test.packageAll(weights);
 
         int max = test.showMax();

@@ -3,7 +3,7 @@ package com.jtang.alg.practices;
 /**
  * Simple 0-1 knapsack problem, dynamic programming.
  */
-public class Knapsack {
+public class KnapsackDynamicProgramming {
 
     //    weights:物品重量，count:物品个数，weightCapacity:背包可承载重量
     public int dopack(int[] weights, int count, int weightCapacity) {
@@ -38,7 +38,7 @@ public class Knapsack {
 
     public static void main(String[] args) {
         int[] weights = {2, 2, 4, 6, 3};
-        Knapsack tester = new Knapsack();
+        KnapsackDynamicProgramming tester = new KnapsackDynamicProgramming();
         int max = tester.dopack(weights, 5, 9);
         System.out.println("Max value is: " + max);
     }

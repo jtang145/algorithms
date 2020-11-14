@@ -1,9 +1,9 @@
 package com.jtang.alg.practices;
 
 /**
- * Space enhancement to {@link KnapsackSimpleSolution}
+ * Space enhancement to {@link KnapsackBackTracking}
  */
-public class KnapsackLessSpace {
+public class KnapsackBackTrackingAdvanced {
 
 
     public static int dopack(int[] weights, int count, int weightCapacity) {
@@ -28,7 +28,7 @@ public class KnapsackLessSpace {
 
     public static void main(String[] args) {
         int[] weights = {2, 2, 4, 6, 3};
-        KnapsackLessSpace tester = new KnapsackLessSpace();
+        KnapsackBackTrackingAdvanced tester = new KnapsackBackTrackingAdvanced();
         int max = tester.dopack(weights, 4, 9);
         System.out.println("Max value is: " + max);
     }
