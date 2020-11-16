@@ -52,7 +52,8 @@ public class LevenshteinDistanceBackTracking {
 
 
     public static void main(String[] args){
-        LevenshteinDistanceBackTracking tester = new LevenshteinDistanceBackTracking("mitcmu".toCharArray(), "mtacnu".toCharArray());
+        LevenshteinDistanceBackTracking tester =
+                new LevenshteinDistanceBackTracking("mitcmu".toCharArray(), "mtacnu".toCharArray());
         tester.calculateDistance();
         tester.printDistance();
     }
